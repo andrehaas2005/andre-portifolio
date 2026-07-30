@@ -10,7 +10,7 @@ export default function About() {
       className="mx-auto max-w-5xl px-6 py-16 sm:px-8 sm:py-20"
     >
       <SectionHeading id="sobre-heading" eyebrow={about.eyebrow} title={about.heading} />
-      <p className="mt-6 max-w-2xl text-base text-foreground-muted sm:text-lg">
+      <p className="mt-6 max-w-2xl whitespace-pre-line text-base text-foreground-muted sm:text-lg">
         {about.bio}
       </p>
       <ul className="mt-8 flex flex-wrap gap-3" aria-label="Áreas de expertise">
