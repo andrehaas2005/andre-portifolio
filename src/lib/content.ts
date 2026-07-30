@@ -139,7 +139,8 @@ export const personalProjects = {
   items: [
     {
       name: "Projeto 50",
-      description: "Transformação física até completar 50 anos — treino, nutrição e evolução documentados semana a semana.",
+      description:
+        "\"O que não é medido não pode ser melhorado\": transformação física e mental rumo aos meus 50 anos, tratada como um produto de engenharia — métricas semanais, KPIs de evolução e uma plataforma própria (Swift/SwiftUI/Firebase) documentando cada etapa.",
       href: "#",
     },
     {
