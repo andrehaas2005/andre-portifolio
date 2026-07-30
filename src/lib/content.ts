@@ -154,8 +154,9 @@ export const personalProjects = {
     },
     {
       name: "Ricky & Raisa",
-      description: "Projeto musical autoral, com identidade visual e conteúdo próprios.",
-      href: "#",
+      description:
+        "Duo musical fictício 100% gerado por IA: letras escritas com ChatGPT, estilo traduzido em prompt e composto no Suno, e os vídeos montados com a imagem dos personagens — publicado no YouTube.",
+      href: "https://www.youtube.com/@RickyeRaisa",
     },
   ] satisfies PersonalProjectItem[],
 };
