@@ -1,37 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Andre Haas — Portfólio
 
-## Getting Started
+Site pessoal de Andre Haas: um hub que une a apresentação profissional (voltada a oportunidades
+internacionais em iOS) e os projetos pessoais fora do código (Projeto 50, livros, música). Página
+única, com navegação por âncoras entre as seções.
 
-First, run the development server:
+## Status atual
+
+🚧 **Esqueleto estrutural** — todas as seções, componentes e a navegação já estão prontos e no ar,
+mas o conteúdo (bio, experiência, projetos técnicos, links de contato) ainda é **placeholder**.
+Todo o texto que precisa ser substituído está centralizado em um único arquivo, veja
+[Onde editar o conteúdo](#onde-editar-o-conteúdo) abaixo.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router)
+- [React 19](https://react.dev)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- TypeScript
+
+## Estrutura do site
+
+| Seção | Âncora | Componente |
+|---|---|---|
+| Header/navegação | — | `src/components/layout/Header.tsx` |
+| Hero (apresentação) | `#topo` | `src/components/sections/Hero.tsx` |
+| Sobre | `#sobre` | `src/components/sections/About.tsx` |
+| Experiência | `#experiencia` | `src/components/sections/Experience.tsx` |
+| Projetos técnicos | `#projetos` | `src/components/sections/Projects.tsx` |
+| Projetos pessoais | `#projetos-pessoais` | `src/components/sections/PersonalProjects.tsx` |
+| Contato | `#contato` | `src/components/sections/Contact.tsx` |
+| Footer | — | `src/components/layout/Footer.tsx` |
+
+Tema escuro fixo, responsivo (mobile-first), sem CMS, backend, formulário funcional ou analytics —
+é um site estático de conteúdo.
+
+## Onde editar o conteúdo
+
+Todo o texto do site (nome, cargo, bio, experiências, projetos, links de contato etc.) vive em
+**`src/lib/content.ts`**, tipado e comentado. Para publicar o site com informações reais, basta
+substituir os valores marcados como placeholder nesse arquivo — nenhum componente precisa ser
+tocado.
+
+## Como rodar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev       # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Outros comandos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build     # build de produção
+npm run start     # roda o build de produção
+npm run lint      # checagem de lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# andre-portifolio
+Projeto padrão Next.js — o caminho mais simples é publicar na [Vercel](https://vercel.com/new),
+apontando para este repositório.
