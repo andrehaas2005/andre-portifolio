@@ -144,14 +144,10 @@ export const personalProjects = {
       href: "#",
     },
     {
-      name: "Reprograme Sua Vida — Manual de Engenharia Comportamental",
-      description: "Livro sobre engenharia comportamental aplicada à mudança de vida, em desenvolvimento/publicação.",
-      href: "#",
-    },
-    {
-      name: "Reprograme Sua Vida — Manual de Engenharia do seu Corpo",
-      description: "Segundo livro da série, focado na engenharia por trás da transformação física do Projeto 50.",
-      href: "#",
+      name: "Reprograme Sua Vida (série de livros)",
+      description:
+        "Série que aplica lógica de Engenharia de Software à vida real — se um sistema pode ser refatorado e evoluído, por que nós não? O primeiro volume (Manual de Engenharia Comportamental) já está publicado; os próximos tratam de Corpo (em paralelo ao Projeto 50), Carreira, Dinheiro e Mente com IA.",
+      href: "https://uiclap.bio/andrehaas",
     },
     {
       name: "Ricky & Raisa",
