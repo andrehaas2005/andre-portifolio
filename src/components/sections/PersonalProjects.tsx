@@ -13,7 +13,7 @@ export default function PersonalProjects() {
         id="projetos-pessoais-heading"
         eyebrow={personalProjects.eyebrow}
         title={personalProjects.heading}
-        description="[Descrição opcional da seção placeholder — ex: projetos e iniciativas fora do trabalho]"
+        description="Iniciativas pessoais fora do código — transformação física, escrita e música."
       />
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {personalProjects.items.map((item) => (

@@ -32,7 +32,7 @@ export default function Contact() {
             className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-5 py-3 font-medium text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <span aria-hidden="true">in</span>
-            LinkedIn (placeholder)
+            LinkedIn
           </a>
         </li>
         <li>
@@ -43,7 +43,7 @@ export default function Contact() {
             className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-5 py-3 font-medium text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <span aria-hidden="true">{"</>"}</span>
-            GitHub (placeholder)
+            GitHub
           </a>
         </li>
       </ul>

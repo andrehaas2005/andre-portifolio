@@ -1,7 +1,5 @@
-// Conteúdo centralizado do site — tudo aqui é PLACEHOLDER e deve ser substituído
-// por Andre com informações reais. Manter o conteúdo isolado neste módulo facilita
-// tanto a edição futura quanto uma eventual versão em inglês (i18n), sem que os
-// componentes precisem ser reescritos.
+// Conteúdo centralizado do site. Itens ainda marcados como placeholder (ex: GitHub,
+// currículo em PDF) devem ser substituídos assim que a informação existir.
 
 export interface NavLink {
   href: string;
@@ -18,7 +16,7 @@ export const navLinks: NavLink[] = [
 
 export const siteIdentity = {
   name: "Andre Haas",
-  role: "[Cargo aqui — ex: Senior/Staff iOS Engineer]",
+  role: "Senior iOS Engineer | Mobile Architecture",
 };
 
 export const hero = {
@@ -26,7 +24,7 @@ export const hero = {
   name: siteIdentity.name,
   role: siteIdentity.role,
   pitch:
-    "[Pitch curto aqui — 1-2 frases sobre o que você faz, para quem, e o que te diferencia]",
+    "Mais de 25 anos em TI e 8+ anos dedicados a iOS/Swift, com passagem por arquitetura de sistemas, liderança técnica e produtos para bancos, telecom, varejo e agronegócio. Hoje também construo minhas próprias plataformas de IA aplicada.",
   ctaPrimary: { label: "Falar comigo", href: "#contato" },
   ctaSecondary: {
     label: "Baixar currículo (placeholder)",
@@ -37,14 +35,14 @@ export const hero = {
 export const about = {
   heading: "Sobre",
   eyebrow: "Quem sou eu",
-  bio: "[Sua bio aqui — 2-3 frases sobre sua trajetória, motivação e o que busca profissionalmente]",
+  bio: "Sou profissional de tecnologia com mais de 25 anos de experiência em TI e mais de 8 anos atuando diretamente com desenvolvimento mobile iOS em Swift. Ao longo da trajetória, atuei como Desenvolvedor, Líder Técnico, Arquiteto de Software e Arquiteto de Sistemas, participando da construção, evolução e sustentação de aplicações para empresas dos segmentos bancário, telecom, varejo e agronegócio — sempre com foco em arquiteturas escaláveis, qualidade e mentoria técnica. Mais recentemente, tenho aplicado essa mesma bagagem de arquitetura e engenharia para construir minhas próprias plataformas de automação com Inteligência Artificial.",
   skills: [
-    "[Arquitetura Mobile — placeholder]",
-    "[Segurança em iOS — placeholder]",
-    "[Swift / SwiftUI — placeholder]",
-    "[Objective-C — placeholder]",
-    "[CI/CD & automação — placeholder]",
-    "[Liderança técnica — placeholder]",
+    "Clean Architecture & SOLID",
+    "MVVM-C & Modularização",
+    "Swift, SwiftUI & UIKit",
+    "Segurança mobile (OAuth2, Keychain, Secure Enclave)",
+    "CI/CD & Fastlane",
+    "Liderança técnica & mentoria",
   ],
 };
 
@@ -61,20 +59,28 @@ export const experience = {
   eyebrow: "Trajetória profissional",
   items: [
     {
-      company: "GFT",
-      role: "[Cargo placeholder — ex: Staff iOS Engineer]",
-      period: "[Período placeholder — ex: 2022 – atual]",
+      company: "GFT Technologies",
+      role: "Mobile Developer III",
+      period: "Atual",
       description:
-        "[Descrição placeholder das responsabilidades e conquistas nesta posição]",
-      isPlaceholder: true,
+        "Desenvolvimento e arquitetura mobile iOS (Swift, SwiftUI, UIKit), com foco em modularização, qualidade, testes automatizados e boas práticas de engenharia em projetos para clientes dos setores financeiro e industrial.",
+      isPlaceholder: false,
     },
     {
-      company: "[Empresa anterior placeholder]",
-      role: "[Cargo placeholder]",
-      period: "[Período placeholder]",
+      company: "CI&T",
+      role: "iOS Developer / Systems Architect",
+      period: "Anteriormente",
       description:
-        "[Descrição placeholder das responsabilidades e conquistas nesta posição]",
-      isPlaceholder: true,
+        "Atuação como desenvolvedor e arquiteto em produtos mobile, incluindo definição de arquitetura, modularização de aplicações e colaboração com equipes multidisciplinares de Produto, Design, Backend e QA.",
+      isPlaceholder: false,
+    },
+    {
+      company: "Diversas empresas (Bancário, Telecom, Varejo, Agronegócio)",
+      role: "Desenvolvedor, Líder Técnico, Arquiteto de Software e de Sistemas",
+      period: "Ao longo de 25+ anos em TI",
+      description:
+        "Construção, evolução e sustentação de aplicações em diferentes setores — modernização de plataformas legadas, criação de novos produtos digitais, redução de incidentes em produção e mentoria de desenvolvedores.",
+      isPlaceholder: false,
     },
   ] satisfies ExperienceItem[],
 };
@@ -91,21 +97,31 @@ export const projects = {
   eyebrow: "Trabalho técnico",
   items: [
     {
-      name: "[Nome do projeto 1 — placeholder]",
-      description: "[Descrição breve placeholder do projeto e do problema resolvido]",
-      tech: ["[Tech A]", "[Tech B]", "[Tech C]"],
+      name: "AgentOS",
+      description:
+        "Plataforma que orquestra um time de agentes de IA (Claude Agent SDK) para produzir e publicar conteúdo em Instagram, Facebook, YouTube e LinkedIn — um Agente CEO delega para subagentes especializados (estratégia, redação, arte, revisão) por empresa/conta gerenciada.",
+      tech: ["Node.js", "TypeScript", "Express", "Prisma", "Next.js", "Claude Agent SDK"],
       href: "#",
     },
     {
-      name: "[Nome do projeto 2 — placeholder]",
-      description: "[Descrição breve placeholder do projeto e do problema resolvido]",
-      tech: ["[Tech A]", "[Tech B]"],
+      name: "Automação de Conteúdo com IA (n8n)",
+      description:
+        "Pipelines de automação self-hosted que geram e publicam conteúdo para múltiplos canais — vídeos de terror gerados por IA para YouTube, vídeos de livros espíritas, conteúdo de futebol e a ponte blog↔Instagram do Corpo Vivo — tudo rodando em VPS própria com Docker.",
+      tech: ["n8n", "Docker", "APIs de IA", "VPS self-hosted"],
       href: "#",
     },
     {
-      name: "[Nome do projeto 3 — placeholder]",
-      description: "[Descrição breve placeholder do projeto e do problema resolvido]",
-      tech: ["[Tech A]", "[Tech B]", "[Tech C]"],
+      name: "CineTrack",
+      description:
+        "App iOS de catálogo e acompanhamento de filmes consumindo a API do TheMovieDB, construído como estudo/portfólio de arquitetura MVVM.",
+      tech: ["Swift", "UIKit", "MVVM"],
+      href: "#",
+    },
+    {
+      name: "Gerador TOTP",
+      description:
+        "Implementação de geração de códigos de autenticação de dois fatores (HOTP/TOTP) em Swift, como estudo aprofundado de segurança e criptografia aplicada.",
+      tech: ["Swift", "SHA1", "HOTP/TOTP"],
       href: "#",
     },
   ] satisfies ProjectItem[],
@@ -123,22 +139,22 @@ export const personalProjects = {
   items: [
     {
       name: "Projeto 50",
-      description: "[Descrição de uma linha placeholder sobre o Projeto 50]",
+      description: "Transformação física até completar 50 anos — treino, nutrição e evolução documentados semana a semana.",
       href: "#",
     },
     {
-      name: "Reprograme Sua Vida — Livro 1",
-      description: "[Descrição de uma linha placeholder sobre o primeiro livro]",
+      name: "Reprograme Sua Vida — Manual de Engenharia Comportamental",
+      description: "Livro sobre engenharia comportamental aplicada à mudança de vida, em desenvolvimento/publicação.",
       href: "#",
     },
     {
-      name: "Reprograme Sua Vida — Livro 2",
-      description: "[Descrição de uma linha placeholder sobre o segundo livro]",
+      name: "Reprograme Sua Vida — Manual de Engenharia do seu Corpo",
+      description: "Segundo livro da série, focado na engenharia por trás da transformação física do Projeto 50.",
       href: "#",
     },
     {
       name: "Ricky & Raisa",
-      description: "[Descrição de uma linha placeholder sobre o projeto de música]",
+      description: "Projeto musical autoral, com identidade visual e conteúdo próprios.",
       href: "#",
     },
   ] satisfies PersonalProjectItem[],
@@ -147,13 +163,12 @@ export const personalProjects = {
 export const contact = {
   heading: "Contato",
   eyebrow: "Vamos conversar",
-  intro:
-    "[Texto placeholder convidando para contato — ex: aberto a oportunidades internacionais em iOS]",
-  email: "email@placeholder.com",
-  linkedin: "https://linkedin.com/in/placeholder",
-  github: "https://github.com/placeholder",
+  intro: "Aberto a oportunidades internacionais em iOS/Mobile Architecture — vamos conversar.",
+  email: "andrehaas2005@gmail.com",
+  linkedin: "https://www.linkedin.com/in/andre-l-o-a-haas/",
+  github: "https://github.com/andrehaas2005",
 };
 
 export const footer = {
-  note: "[Nota de rodapé placeholder — ex: Feito com Next.js e Tailwind]",
+  note: "Feito com Next.js e Tailwind CSS.",
 };
