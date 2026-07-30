@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# fotos/materiais brutos pessoais (não publicar no repo — só o que é
+# efetivamente usado vai pra public/images)
+/asserts
+
 # debug
 npm-debug.log*
 yarn-debug.log*

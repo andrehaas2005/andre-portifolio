@@ -23,6 +23,7 @@ export const hero = {
   greeting: "Olá, eu sou",
   name: siteIdentity.name,
   role: siteIdentity.role,
+  photo: "/images/andre-terno.jpg",
   pitch:
     "Mais de 25 anos em TI e 8+ anos dedicados a iOS/Swift, com passagem por arquitetura de sistemas, liderança técnica e produtos para bancos, telecom, varejo e agronegócio. Hoje também construo minhas próprias plataformas de IA aplicada.",
   ctaPrimary: { label: "Falar comigo", href: "#contato" },
