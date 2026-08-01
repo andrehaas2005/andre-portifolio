@@ -91,6 +91,9 @@ export interface ProjectItem {
   description: string;
   tech: string[];
   href: string;
+  // "violet" marca trabalho de orquestração de IA/agentes; "teal" o núcleo iOS/segurança —
+  // usado pra colorir o card por domínio, não é só decoração.
+  domain: "teal" | "violet";
 }
 
 export const projects = {
@@ -100,9 +103,10 @@ export const projects = {
     {
       name: "AgentOS",
       description:
-        "Plataforma que orquestra um time de agentes de IA (Claude Agent SDK) para produzir e publicar conteúdo em Instagram, Facebook, YouTube e LinkedIn — um Agente CEO delega para subagentes especializados (estratégia, redação, arte, revisão) por empresa/conta gerenciada.",
-      tech: ["Node.js", "TypeScript", "Express", "Prisma", "Next.js", "Claude Agent SDK"],
+        "Plataforma que orquestra um time de agentes de IA — um Agente CEO delega para subagentes especializados (estratégia, redação, arte, revisão) que geram e publicam conteúdo de verdade no Instagram e LinkedIn. Já inclui um editor completo de conteúdo (tipo de post, mídia, vídeo), um fluxo de revisão de marca antes da aprovação, e um chat direto com o Diretor de Arte pra recriar peças visuais em tempo real.",
+      tech: ["Node.js", "TypeScript", "Express", "Prisma", "Next.js", "Orquestração de LLMs"],
       href: "#",
+      domain: "violet",
     },
     {
       name: "Automação de Conteúdo com IA (n8n)",
@@ -110,6 +114,7 @@ export const projects = {
         "Pipelines de automação self-hosted que geram e publicam conteúdo para múltiplos canais — vídeos de terror gerados por IA para YouTube, vídeos de livros espíritas, conteúdo de futebol e a ponte blog↔Instagram do Corpo Vivo — tudo rodando em VPS própria com Docker.",
       tech: ["n8n", "Docker", "APIs de IA", "VPS self-hosted"],
       href: "#",
+      domain: "violet",
     },
     {
       name: "CineTrack",
@@ -117,6 +122,7 @@ export const projects = {
         "App iOS de catálogo e acompanhamento de filmes consumindo a API do TheMovieDB, construído como estudo/portfólio de arquitetura MVVM.",
       tech: ["Swift", "UIKit", "MVVM"],
       href: "#",
+      domain: "teal",
     },
     {
       name: "Gerador TOTP",
@@ -124,6 +130,7 @@ export const projects = {
         "Implementação de geração de códigos de autenticação de dois fatores (HOTP/TOTP) em Swift, como estudo aprofundado de segurança e criptografia aplicada.",
       tech: ["Swift", "SHA1", "HOTP/TOTP"],
       href: "#",
+      domain: "teal",
     },
   ] satisfies ProjectItem[],
 };

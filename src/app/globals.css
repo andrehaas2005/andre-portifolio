@@ -1,23 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --background-elevated: #131316;
-  --foreground: #ededed;
-  --foreground-muted: #9a9aa2;
-  --border-subtle: #26262b;
-  --accent: #5eead4;
+  --background: #090d13;
+  --background-elevated: #10151d;
+  --background-elevated-2: #0c1119;
+  --grid-line: #1b2732;
+  --foreground: #e7edf3;
+  --foreground-muted: #8492a3;
+  --border-subtle: #223140;
+  --accent: #4dd8c4;
   --accent-strong: #2dd4bf;
+  --accent-violet: #9d7cf5;
+  --accent-violet-strong: #8259f0;
+  --accent-amber: #f5a35c;
+  --accent-amber-strong: #f2903a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-background-elevated: var(--background-elevated);
+  --color-background-elevated-2: var(--background-elevated-2);
+  --color-grid-line: var(--grid-line);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border-subtle: var(--border-subtle);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-violet-strong: var(--accent-violet-strong);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-amber-strong: var(--accent-amber-strong);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,4 +38,113 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Fundo de grade tipo prancheta de projeto — usado pelo ParallaxField */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.55;
+}
+
+/* Painel com cantos técnicos (estilo prancheta) — cor do canto via --panel-accent,
+   trocada pelas classes .domain-*. Precisa de dois spans internos (.corner-bl/.corner-br)
+   além dos ::before/::after do próprio elemento pra formar os 4 cantos. */
+.panel-brackets {
+  --panel-accent: var(--accent);
+  position: relative;
+}
+.panel-brackets::before,
+.panel-brackets::after,
+.panel-brackets .corner-bl::before,
+.panel-brackets .corner-br::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+.panel-brackets::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--panel-accent);
+  border-left: 2px solid var(--panel-accent);
+}
+.panel-brackets::after {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid var(--panel-accent);
+  border-right: 2px solid var(--panel-accent);
+}
+.panel-brackets .corner-bl::before {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid var(--panel-accent);
+  border-left: 2px solid var(--panel-accent);
+}
+.panel-brackets .corner-br::before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--panel-accent);
+  border-right: 2px solid var(--panel-accent);
+}
+.panel-brackets:hover::before,
+.panel-brackets:hover::after,
+.panel-brackets:hover .corner-bl::before,
+.panel-brackets:hover .corner-br::before {
+  width: 20px;
+  height: 20px;
+}
+.panel-brackets.domain-violet { --panel-accent: var(--accent-violet); }
+.panel-brackets.domain-amber { --panel-accent: var(--accent-amber); }
+
+/* Scroll-reveal — ativado via classe .is-visible (componente Reveal) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.blink-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--accent);
+  margin-left: 4px;
+  vertical-align: -2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(1.05); }
+}
+.ring-pulse {
+  animation: ring-pulse 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
